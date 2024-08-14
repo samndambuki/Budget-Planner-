@@ -8,11 +8,16 @@
       <div class="slide-controls">
         <input type="radio" name="slide" id="login" checked />
         <input type="radio" name="slide" id="signup" />
-        <label for="login" class="slide login">Login</label>
-        <label for="signup" class="slide signup">Signup</label>
+        <label for="login" class="slide login" (click)="isLogin = true"
+          >Login</label
+        >
+        <label for="signup" class="slide signup" (click)="isLogin = false"
+          >Signup</label
+        >
         <div class="slider-tab"></div>
       </div>
       <div class="form-inner">
+        @if(isLogin){
         <form action="#" class="login">
           <div class="field">
             <input type="text" name="userName" placeholder="User Name" />
@@ -32,6 +37,7 @@
             >
           </div>
         </form>
+        }@else{
         <form class="signup">
           <div class="field">
             <input type="text" name="fullName" placeholder="Full Name" />
@@ -47,9 +53,10 @@
           </div>
           <div class="field btn">
             <div class="btn-layer"></div>
-            <input type="button" value="Signup" />
+            <input type="submit" value="Signup" />
           </div>
         </form>
+        }
       </div>
     </div>
   </div>
