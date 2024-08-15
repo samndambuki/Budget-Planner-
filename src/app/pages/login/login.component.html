@@ -20,10 +20,36 @@
         @if(isLogin){
         <form action="#" class="login">
           <div class="field">
-            <input type="text" name="userName" placeholder="User Name" />
+            <input
+              type="text"
+              name="fullName"
+              [(ngModel)]="register.fullName"
+              placeholder="Full Name"
+            />
           </div>
           <div class="field">
-            <input type="password" name="password" placeholder="Password" />
+            <input
+              type="text"
+              name="emailId"
+              [(ngModel)]="register.emailId"
+              placeholder="Email Address"
+            />
+          </div>
+          <div class="field">
+            <input
+              type="text"
+              name="userName"
+              [(ngModel)]="register.userName"
+              placeholder="User Name"
+            />
+          </div>
+          <div class="field">
+            <input
+              type="password"
+              name="password"
+              [(ngModel)]="register.password"
+              placeholder="Password"
+            />
           </div>
           <div class="pass-link"><a href="#">Forgot password?</a></div>
           <div class="field btn">
@@ -39,7 +65,7 @@
         </form>
         }@else{
         <form class="signup">
-          <div class="field">
+          <!-- <div class="field">
             <input type="text" name="fullName" placeholder="Full Name" />
           </div>
           <div class="field">
@@ -50,10 +76,42 @@
           </div>
           <div class="field">
             <input type="password" name="password" placeholder="Password" />
+          </div> -->
+          <div class="field">
+            <input
+              type="text"
+              name="fullName"
+              [(ngModel)]="register.fullName"
+              placeholder="Full Name"
+            />
+          </div>
+          <div class="field">
+            <input
+              type="text"
+              name="emailId"
+              [(ngModel)]="register.emailId"
+              placeholder="Email Address"
+            />
+          </div>
+          <div class="field">
+            <input
+              type="text"
+              name="userName"
+              [(ngModel)]="register.userName"
+              placeholder="User Name"
+            />
+          </div>
+          <div class="field">
+            <input
+              type="password"
+              name="password"
+              [(ngModel)]="register.password"
+              placeholder="Password"
+            />
           </div>
           <div class="field btn">
             <div class="btn-layer"></div>
-            <input type="submit" value="Signup" />
+            <input type="button" value="Signup" (click)="createUser()" />
           </div>
         </form>
         }

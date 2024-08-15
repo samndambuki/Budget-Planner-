@@ -7,4 +7,7 @@ import { Injectable } from '@angular/core';
 export class MasterService {
   apiURL: string = 'https://projectapi.gerasim.in/api/BudgetPlanner/';
   constructor(private http: HttpClient) {}
+  createUser(obj: any) {
+    return this.http.post(`${this.apiURL}AddNewUser`, obj);
+  }
 }
