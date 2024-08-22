@@ -10,4 +10,9 @@ import { IncomeComponent } from '../income/income.component';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
-export class HomeComponent {}
+export class HomeComponent {
+  selectedTab: string = 'Dashboard';
+  changeTab(tab: string) {
+    this.selectedTab = tab;
+  }
+}

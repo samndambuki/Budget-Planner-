@@ -1,9 +1,33 @@
 <div class="row">
   <div class="col-12 text-center">
     <div class="btn-group">
-      <button type="button">Dashboard</button>
-      <button type="button">Expense</button>
-      <button type="button">Income</button>
+      <button
+        type="button"
+        [class]="
+          selectedTab == 'Dashboard' ? 'btn btn-success' : 'btn btn-primary'
+        "
+        (click)="changeTab('Dashboard')"
+      >
+        Dashboard
+      </button>
+      <button
+        type="button"
+        [class]="
+          selectedTab == 'Expense' ? 'btn btn-success' : 'btn btn-primary'
+        "
+        (click)="changeTab('Expense')"
+      >
+        Expense
+      </button>
+      <button
+        type="button"
+        [class]="
+          selectedTab == 'Income' ? 'btn btn-success' : 'btn btn-primary'
+        "
+        (click)="changeTab('Income')"
+      >
+        Income
+      </button>
     </div>
   </div>
 </div>
