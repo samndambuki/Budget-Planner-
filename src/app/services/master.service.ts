@@ -10,4 +10,8 @@ export class MasterService {
   createUser(obj: any) {
     return this.http.post(`${this.apiURL}AddNewUser`, obj);
   }
+
+  loginUser(obj: any) {
+    return this.http.post(`${this.apiURL}login`, obj);
+  }
 }

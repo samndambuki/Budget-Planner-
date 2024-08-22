@@ -22,24 +22,8 @@
           <div class="field">
             <input
               type="text"
-              name="fullName"
-              [(ngModel)]="register.fullName"
-              placeholder="Full Name"
-            />
-          </div>
-          <div class="field">
-            <input
-              type="text"
-              name="emailId"
-              [(ngModel)]="register.emailId"
-              placeholder="Email Address"
-            />
-          </div>
-          <div class="field">
-            <input
-              type="text"
               name="userName"
-              [(ngModel)]="register.userName"
+              [(ngModel)]="loginObj.userName"
               placeholder="User Name"
             />
           </div>
@@ -47,14 +31,14 @@
             <input
               type="password"
               name="password"
-              [(ngModel)]="register.password"
+              [(ngModel)]="loginObj.password"
               placeholder="Password"
             />
           </div>
           <div class="pass-link"><a href="#">Forgot password?</a></div>
           <div class="field btn">
             <div class="btn-layer"></div>
-            <input type="button" value="Login" />
+            <input type="button" value="Login" (click)="onLogin()" />
           </div>
           <div class="signup-link">
             Not a member?
