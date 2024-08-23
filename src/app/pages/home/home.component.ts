@@ -13,6 +13,8 @@ import { MasterService } from '../../services/master.service';
 })
 export class HomeComponent implements OnInit {
   selectedTab: string = 'Dashboard';
+  incomeMasterId: number = 0;
+  expenseMasterId: number = 0;
   transactionList: any[] = [];
   changeTab(tab: string) {
     this.selectedTab = tab;
@@ -25,6 +27,7 @@ export class HomeComponent implements OnInit {
   getTransactionType() {
     this.masterService.getAllTransactionType().subscribe((res: any) => {
       this.transactionList = res.data;
+      const income = this.transactionList.find((m) => m.masterName == 'income');
     });
   }
 }
