@@ -14,4 +14,8 @@ export class MasterService {
   loginUser(obj: any) {
     return this.http.post(`${this.apiURL}login`, obj);
   }
+
+  getAllTransactionType() {
+    return this.http.get(`${this.apiURL}GetAllTransactionType`);
+  }
 }

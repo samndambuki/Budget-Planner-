@@ -33,8 +33,12 @@
 </div>
 <div class="row">
   <div class="col-12">
+    @if(selectedTab=='Dashboard'){
     <app-dashboard></app-dashboard>
+    }@else if(selectedTab=='Expense'){
     <app-expense></app-expense>
+    }@else if(selectedTab=='Income'){
     <app-income></app-income>
+    }
   </div>
 </div>
