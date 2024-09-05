@@ -41,11 +41,16 @@
         <div class="row">
           <div class="col-6">
             <label for="">Date</label>
-            <input type="date" class="form-control" placeholder="Date" />
+            <input
+              type="date"
+              [(ngModel)]="transactionObj.date"
+              class="form-control"
+              placeholder="Date"
+            />
           </div>
           <div class="col-6">
             <label for="">Select Category</label>
-            <select class="form-select">
+            <select class="form-select" [(ngModel)]="transactionObj.categoryId">
               <option value="">Select</option>
               @for(item of categoryList;track $index){
               <option [value]="item.categoryId">{{ item.categoryName }}</option>
@@ -55,12 +60,18 @@
           </div>
           <div class="col-6">
             <label for="">Amount</label>
-            <input type="number" class="form-control" placeholder="Amount" />
+            <input
+              type="number"
+              [(ngModel)]="transactionObj.Amount"
+              class="form-control"
+              placeholder="Amount"
+            />
           </div>
           <div class="col-12">
             <label for="">Purpose</label>
             <textarea
               class="form-control"
+              [(ngModel)]="transactionObj.Purpose"
               rows="3"
               placeholder="Purpose"
             ></textarea>

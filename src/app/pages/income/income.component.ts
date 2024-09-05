@@ -1,10 +1,11 @@
 import { Component, inject, Input, OnInit } from '@angular/core';
 import { MasterService } from '../../services/master.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-income',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './income.component.html',
   styleUrl: './income.component.css',
 })
@@ -30,7 +31,17 @@ export class IncomeComponent implements OnInit {
       modal.style.display = 'none';
     }
   }
-  onSave() {}
+  onSave() {
+    this.masterService
+      .addNewTransaction(this.transactionObj)
+      .subscribe((res: any) => {
+        if (res.result) {
+          alert('Item Added success');
+        } else {
+          alert(res.message);
+        }
+      });
+  }
 
   @Input() masterId: number = 0;
 

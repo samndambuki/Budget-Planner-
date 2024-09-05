@@ -6,7 +6,9 @@ import { Injectable } from '@angular/core';
 })
 export class MasterService {
   apiURL: string = 'https://projectapi.gerasim.in/api/BudgetPlanner/';
+
   constructor(private http: HttpClient) {}
+
   createUser(obj: any) {
     return this.http.post(`${this.apiURL}AddNewUser`, obj);
   }
@@ -22,5 +24,8 @@ export class MasterService {
   getCategoryByUserId(id: number) {
     return this.http.get(`${this.apiURL}GetCategoryByUserId?userId=${id}`);
   }
-  // GetCategoryByUserId?userId=4
+
+  addNewTransaction(obj: any) {
+    return this.http.post(`${this.apiURL}AddNewTransaction`, obj);
+  }
 }
