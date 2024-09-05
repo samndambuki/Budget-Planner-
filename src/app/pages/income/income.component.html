@@ -47,6 +47,9 @@
             <label for="">Select Category</label>
             <select class="form-select">
               <option value="">Select</option>
+              @for(item of categoryList;track $index){
+              <option [value]="item.categoryId">{{ item.categoryName }}</option>
+              }
               <option></option>
             </select>
           </div>

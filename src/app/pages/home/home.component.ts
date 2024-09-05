@@ -28,6 +28,15 @@ export class HomeComponent implements OnInit {
     this.masterService.getAllTransactionType().subscribe((res: any) => {
       this.transactionList = res.data;
       const income = this.transactionList.find((m) => m.masterName == 'income');
+      if (income) {
+        this.incomeMasterId = income.masterId;
+      }
+      const expense = this.transactionList.find(
+        (m) => m.masterName == 'Expense'
+      );
+      if (expense) {
+        this.expenseMasterId = expense.masterId;
+      }
     });
   }
 }

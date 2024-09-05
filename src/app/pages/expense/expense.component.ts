@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-expense',
@@ -23,4 +23,7 @@ export class ExpenseComponent {
     }
   }
   onSave() {}
+
+  //input is used to pass the data
+  @Input() masterId: number = 0;
 }

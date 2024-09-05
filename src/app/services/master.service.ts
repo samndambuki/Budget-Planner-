@@ -18,4 +18,9 @@ export class MasterService {
   getAllTransactionType() {
     return this.http.get(`${this.apiURL}GetAllTransactionType`);
   }
+
+  getCategoryByUserId(id: number) {
+    return this.http.get(`${this.apiURL}GetCategoryByUserId?userId=${id}`);
+  }
+  // GetCategoryByUserId?userId=4
 }

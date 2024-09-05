@@ -31,7 +31,7 @@ export class LoginComponent {
   router = inject(Router);
 
   createUser() {
-    debugger;
+    // debugger;
     this.masterService.createUser(this.register).subscribe((res: any) => {
       if (res.result) {
         alert('User Created');
@@ -42,9 +42,10 @@ export class LoginComponent {
   }
 
   onLogin() {
-    debugger;
+    // debugger;
     this.masterService.loginUser(this.loginObj).subscribe((res: any) => {
       if (res.result) {
+        //stored data in string format in a key called budgetUser
         sessionStorage.setItem('budgetUser', JSON.stringify(res.data));
         this.router.navigateByUrl('home');
       } else {
